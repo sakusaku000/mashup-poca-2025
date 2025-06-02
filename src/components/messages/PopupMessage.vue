@@ -92,7 +92,7 @@
     }
     @keyframes contents-container-anim-in {
         from {
-            transform:scale(.8);
+            transform:scale(.8) rotate(-2deg);
         }
         to {
             opacity:1;
@@ -106,7 +106,7 @@
     }
     @keyframes contents-container-anim-in-alt {
         from {
-            transform:scale(.8);
+            transform:scale(.8) rotate(2deg);
         }
         to {
             opacity:1;

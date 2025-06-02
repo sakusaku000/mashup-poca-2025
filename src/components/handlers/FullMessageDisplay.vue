@@ -23,7 +23,7 @@
     .msg-fade-leave-to {
         opacity:0;
         transform:scale(.9);
-        transition-duration:.8s;
+        transition-duration:.6s;
         transition-timing-function:cubic-bezier(0.680, -0.550, 0.265, 1.550);
     }
 </style>

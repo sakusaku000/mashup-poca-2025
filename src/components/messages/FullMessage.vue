@@ -81,7 +81,7 @@
     }
     @keyframes message-contents-anim-in {
         from {
-            transform:scale(.7);
+            transform:scale(.7) rotate(-2deg);
             opacity:0;
         }
         to {

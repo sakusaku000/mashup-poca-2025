@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute" :class="side ? 'top-[400px] left-20 -rotate-3 rounded-tl-sm' : 'top-[500px] right-20 rotate-3'">
+    <div class="absolute" :class="side ? 'top-[360px] left-22 -rotate-3 rounded-tl-sm' : 'top-[520px] right-22 rotate-3'">
         <!-- author container -->
         <div id="author" class="absolute -top-14 flex items-center gap-3 author-container-anim-in" :class="side ? '-left-4' : '-right-4'">
             <!-- blurred darken bg -->
@@ -88,11 +88,12 @@
     /* Message contents animation */
     .contents-container-anim-in {
         animation:contents-container-anim-in .6s 1000ms forwards cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transform-origin:top left;
         opacity:0;
     }
     @keyframes contents-container-anim-in {
         from {
-            transform:translateX(-30px) translateY(-30px) scale(.8);
+            transform:scale(.8);
         }
         to {
             opacity:1;
@@ -101,11 +102,12 @@
     /* Message Contents Animation (Right side) */
     .contents-container-anim-in-alt {
         animation:contents-container-anim-in-alt .6s 1000ms forwards cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transform-origin:top right;
         opacity:0;
     }
     @keyframes contents-container-anim-in-alt {
         from {
-            transform:translateX(30px) translateY(-30px) scale(.8);
+            transform:scale(.8);
         }
         to {
             opacity:1;

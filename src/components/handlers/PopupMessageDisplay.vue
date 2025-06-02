@@ -17,7 +17,7 @@
     const messageDisplayStore = useMessageDisplayStore();
 
     // -- import debug message
-    const debugMessage = DebugMessages[3] as MessageData;
+    const debugMessage = DebugMessages[7] as MessageData;
 </script>
 
 <style scoped>

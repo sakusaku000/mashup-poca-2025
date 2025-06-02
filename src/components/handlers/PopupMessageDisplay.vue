@@ -2,14 +2,22 @@
     <Transition name="popup-fade">
         <PopupMessage :message="messageDisplayStore.popup" v-if="messageDisplayStore.popup"/>
     </Transition>
+
+    <!-- DEBUG VERSION -->
+    <!-- <PopupMessage :message="debugMessage"/> -->
 </template>
 
 <script lang="ts" setup>
     import { useMessageDisplayStore } from '@/stores/MessageDisplayStore';
     import PopupMessage from '../messages/PopupMessage.vue';
+    import DebugMessages from "@/data/DebugMessages.json";
+    import type { MessageData } from '@/types/MessageData';
 
     // -- import message display store
     const messageDisplayStore = useMessageDisplayStore();
+
+    // -- import debug message
+    const debugMessage = DebugMessages[3] as MessageData;
 </script>
 
 <style scoped>

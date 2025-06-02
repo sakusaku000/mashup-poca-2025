@@ -92,7 +92,7 @@
     }
     @keyframes contents-container-anim-in {
         from {
-            transform:translateX(-40px) translateY(-40px) scale(.8);
+            transform:translateX(-30px) translateY(-30px) scale(.8);
         }
         to {
             opacity:1;
@@ -105,7 +105,7 @@
     }
     @keyframes contents-container-anim-in-alt {
         from {
-            transform:translateX(40px) translateY(-40px) scale(.8);
+            transform:translateX(30px) translateY(-30px) scale(.8);
         }
         to {
             opacity:1;

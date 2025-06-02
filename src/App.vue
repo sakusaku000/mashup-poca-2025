@@ -12,11 +12,15 @@
 
             </div>
         </Transition>
+
+        <!-- Full Screen Messages -->
+        <FullMessageDisplay/>
     </main>
 </template>
 
 <script setup>
     // -- import message display handlers
+    import FullMessageDisplay from './components/handlers/FullMessageDisplay.vue';
     import PopupMessageDisplay from './components/handlers/PopupMessageDisplay.vue';
 
     // -- import message display store

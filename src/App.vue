@@ -1,17 +1,15 @@
 <template>
     <!-- create main 1080p canvas -->
     <!-- TODO: REMOVE PLACEHOLDER BACKGROUND -->
-    <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden bg-red-900">
+    <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden" style="background-image:url(https://cdn.discordapp.com/attachments/549589798554435625/1379185042991091722/image.png?ex=683f51aa&is=683e002a&hm=30ad7ba7de31204c20f68415f0b3843b8311c22a10903c296f912ff87661134c&)">
         
         <!-- Popup Displays: Messages + Avatars. Wrapped in fade transition. These disappear if a full screen message is being displayed  -->
-        <Transition name="display-fade">
-            <div class="absolute inset-0" v-if="!messageDisplay.full">
+        <div class="absolute inset-0 duration-300" :class="messageDisplay.full ? 'opacity-0' : 'delay-500'">
                 
-                <!-- Popup Messages -->
-                <PopupMessageDisplay/>
+            <!-- Popup Messages -->
+            <PopupMessageDisplay/>
 
-            </div>
-        </Transition>
+        </div>
 
         <!-- Full Screen Messages -->
         <FullMessageDisplay/>

@@ -21,7 +21,7 @@
                 <img :src="message.attachment" v-if="message.attachment" class="max-h-80 rounded-2xl outline-2 outline-neutral-300">
                 
                 <!-- message content -->
-                <span v-if="message.content" class="mx-3 text-xl">{{ truncatedContent }}</span>
+                <span v-if="message.content" class="mx-3 text-xl" v-html="formattedContent"></span>
             </div>
         </div>
     </div>
@@ -29,15 +29,14 @@
 
 <script lang="ts" setup>
     import type { MessageData } from '@/types/MessageData';
+    import FormatMessageContent from '@/utils/FormatMessageContent';
     import { ref, type Ref } from 'vue';
     
     // -- define message data prop
     const props = defineProps<{
         message:MessageData 
-    }>()
-
-    // -- message content should be truncated if over 128 characters
-    const truncatedContent = props.message.content && (props.message.content.length > 128 ? `${props.message.content.substring(0, 128)}...` : props.message.content);
+    }>();
+    const formattedContent = FormatMessageContent(props.message.content, 32);
 
     // -- determine side of screen to display at random
     const side:Ref<boolean> = ref(false);

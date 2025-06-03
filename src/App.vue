@@ -30,9 +30,9 @@
     import { ref } from 'vue';
     import { useMessageDisplayStore } from './stores/MessageDisplayStore';
     import DebugDisplay from './components/handlers/DebugDisplay.vue';
-import UserPopupDisplay from './components/handlers/UserPopupDisplay.vue';
-import { io } from 'socket.io-client';
-import type { MessageData } from './types/MessageData';
+    import UserPopupDisplay from './components/handlers/UserPopupDisplay.vue';
+    import { io } from 'socket.io-client';
+    import type { MessageData } from './types/MessageData';
 
     // import message display store
     const messageDisplay = useMessageDisplayStore();

@@ -31,6 +31,8 @@
     import { useMessageDisplayStore } from './stores/MessageDisplayStore';
     import DebugDisplay from './components/handlers/DebugDisplay.vue';
 import UserPopupDisplay from './components/handlers/UserPopupDisplay.vue';
+import { io } from 'socket.io-client';
+import type { MessageData } from './types/MessageData';
 
     // import message display store
     const messageDisplay = useMessageDisplayStore();
@@ -58,7 +60,26 @@ import UserPopupDisplay from './components/handlers/UserPopupDisplay.vue';
     } 
     // -- if fake msg is disabled, make connection to socket server
     else {
-        // TODO: setup io connection
+        // -- create socket connection
+        const socket = io(import.meta.env.VITE_APP_GUARDIAN_SOCKET_URL);
+        socket.on("connect", () => {
+            messageDisplay.setSocketActive();
+        })
+        socket.on("disconnect", () => {
+            messageDisplay.setSocketInactive();
+        })
+
+        // -- listen for message events
+        // FULL
+        socket.on("MESSAGE_FULL", (message) => {
+            messageDisplay.setFull(message as MessageData);
+            console.log(`FULL Message Displayed: ${message}`);
+        });
+        // POPUP
+        socket.on("MESSAGE_POPUP", (message) => {
+            messageDisplay.setPopup(message as MessageData);
+            console.log(`POPUP Message Displayed: ${message}`);
+        });
     }
 
     // -- check for debug mode overlay param

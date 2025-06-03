@@ -14,7 +14,9 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
         // full screen message data
         full:null as null | MessageData,
         // user icon popup data
-        userIconPopup:[] as UserPopupData[]
+        userIconPopup:[] as UserPopupData[],
+        // socket connection state
+        socketActive:false as boolean
     }),
     actions:{
         setPopup(message:MessageData) {
@@ -67,6 +69,14 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
             const message = DebugMessages[Math.floor(Math.random()*DebugMessages.length)];
             // -- set as full screen message
             this.setFull(message as MessageData);
+        },
+
+        // -- set socket connection
+        setSocketActive() {
+            this.socketActive = true;
+        },
+        setSocketInactive() {
+            this.socketActive = false;
         }
     }
 })

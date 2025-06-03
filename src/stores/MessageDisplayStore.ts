@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import type { MessageData } from "@/types/MessageData";
 import type { UserPopupData } from "@/types/UserPopupData";
+import uniqid from "uniqid";
 
 // -- debug data
 import DebugMessages from "../data/DebugMessages.json";
@@ -13,7 +14,7 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
         // full screen message data
         full:null as null | MessageData,
         // user icon popup data
-        userIconPopup:null as null | UserPopupData
+        userIconPopup:[] as UserPopupData[]
     }),
     actions:{
         setPopup(message:MessageData) {
@@ -31,10 +32,9 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
             }, 8000);
         },
         setUserPopup(user:UserPopupData) {
-            if (this.userIconPopup) return;
-            this.userIconPopup = user;
+            this.userIconPopup.push(user);
             setTimeout(() => {
-                this.userIconPopup = null;
+                this.userIconPopup.splice(this.userIconPopup.findIndex(u => u.userId === user.userId), 1);
             }, 2000);
         },
 
@@ -49,13 +49,14 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
             }, 15000);
 
             // USER ICON POPUPS
-            // -- every 6 seconds generate a user ID with random avatar and push to array
+            // -- generate a user ID with random avatar and push to array
             setInterval(() => {
                 const avatar = DebugAvatars[Math.floor(Math.random()*DebugAvatars.length)];
                 this.setUserPopup({
+                    userId:uniqid(),
                     userAvatar:avatar
                 });
-            }, 6000);
+            }, 500);
         },
         // -- on keyboard event, set a random full screen message
         setDebugFullMessage() {

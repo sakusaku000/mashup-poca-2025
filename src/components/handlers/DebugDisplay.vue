@@ -2,6 +2,7 @@
     <div class="fixed top-5 left-5 right-1/2 font-mono text-white drop-shadow-[1px_1px_0px_#000000]">
         <p><b>full:</b> {{ messageDisplayStore.full || "unset" }}</p>
         <p><b>popup:</b> {{ messageDisplayStore.popup || "unset" }}</p>
+        <p><b>users:</b> {{ messageDisplayStore.userIconPopup }}</p>
     </div>
 </template>
 

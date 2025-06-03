@@ -1,11 +1,14 @@
 <template>
     <Transition name="msg-fade">
-        <!-- <FullMessage :message="messageDisplayStore.full" v-if="messageDisplayStore.full && !messageDisplayStore.full.attachment"/> -->
-        <FullMessage :message="messageDisplayStore.full" v-if="messageDisplayStore.full"/>
+        <FullMessage :message="messageDisplayStore.full" v-if="messageDisplayStore.full && !messageDisplayStore.full.attachment"/>
+    </Transition>
+    <Transition name="msg-fade">
+        <ImageFullMessage :message="messageDisplayStore.full" v-if="messageDisplayStore.full && messageDisplayStore.full.attachment"/>
     </Transition>
 
-    <!-- DEBUG VERSION FOR TESTING -->
+    <!-- DEBUG VERSIONS FOR TESTING -->
     <!-- <FullMessage :message="debugMessage"/> -->
+    <!-- <ImageFullMessage :message="debugMessage"/> -->
 </template>
 
 <script lang="ts" setup>
@@ -14,6 +17,7 @@
     import DebugMessages from "@/data/DebugMessages.json";
     import type { MessageData } from '@/types/MessageData';
     import FullMessage from '../messages/FullMessage.vue';
+    import ImageFullMessage from '../messages/ImageFullMessage.vue';
 
     // -- import debug message
     const debugMessage = DebugMessages[0] as MessageData;

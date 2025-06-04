@@ -5,11 +5,7 @@
     <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden">
         
         <!-- Popup Displays: Messages + Avatars. Wrapped in fade transition. These disappear if a full screen message is being displayed  -->
-<<<<<<< HEAD
-        <div class="absolute inset-0 duration-300" :class="messageDisplay.full ? 'opacity-0' : 'delay-500'">
-=======
         <div class="absolute inset-0 duration-300" :class="messageDisplay.full && showFull ? 'opacity-0' : 'delay-1000'" v-if="showPopups">
->>>>>>> d0ed253 (updated to allow for each display component to be toggled on or off)
                 
             <!-- Popup Messages -->
             <PopupMessageDisplay/>
@@ -20,14 +16,10 @@
         </div>
 
         <!-- Full Screen Messages -->
-<<<<<<< HEAD
-        <FullMessageDisplay/>
-=======
         <FullMessageDisplay v-if="showFull"/>
 
         <!-- debug overlay -->
         <DebugDisplay v-if="debugOverlay"/>
->>>>>>> d0ed253 (updated to allow for each display component to be toggled on or off)
     </main>
 
     <!-- debug overlay -->

@@ -1,8 +1,8 @@
-export default (content:undefined|string, size:number) => {
+export default (content:undefined|string, size:number, textLength = 128) => {
     if (!content || content.length < 1) return null;
 
     // -- Truncate content to max of 128 characters
-    content = content.length > 128 ? `${content.substring(0,128)}...` : content;
+    content = content.length > textLength ? `${content.substring(0,textLength)}...` : content;
 
     // -- Match any discord emotes and replace instances with img tags that will display emotes
     const regex = /<(a)?:([a-zA-Z0-9_]+):(\d+)>/g;

@@ -31,7 +31,7 @@
     const props = defineProps<{
         message:MessageData
     }>();
-    const formattedContent = FormatMessageContent(props.message.content, 36);
+    const formattedContent = FormatMessageContent(props.message.content, 36, 350);
 </script>
 
 <style scoped>

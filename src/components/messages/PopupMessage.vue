@@ -3,7 +3,7 @@
         <!-- author container -->
         <div id="author" class="absolute -top-14 flex items-center gap-3 author-container-anim-in" :class="side ? '-left-4' : '-right-4'">
             <!-- blurred darken bg -->
-            <div class="absolute inset-0 -inset-x-4 bg-black/20 -z-20 blur-lg" :class="side ? 'author-name-anim-in' : 'author-name-anim-in-alt'"></div>
+            <div class="absolute inset-0 -inset-x-4 bg-black/60 -z-20 blur-lg" :class="side ? 'author-name-anim-in' : 'author-name-anim-in-alt'"></div>
 
             <!-- avatar container -->
             <div class="relative w-10 h-10 rounded-full bg-neutral-700 overflow-hidden" :class="!side ? 'order-last' : ''">
@@ -14,7 +14,7 @@
         </div>
 
         <!-- Message contents container -->
-        <div class="bg-neutral-100 border border-neutral-200 rounded-2xl p-4 max-w-96 drop-shadow-[0px_0px_20px_#00000060]" :class="side ? 'rounded-tl-sm contents-container-anim-in' : 'rounded-tr-sm contents-container-anim-in-alt'">
+        <div class="bg-neutral-100 border border-neutral-200 rounded-2xl p-4 max-w-96 drop-shadow-[0px_0px_20px_#000000]" :class="side ? 'rounded-tl-sm contents-container-anim-in' : 'rounded-tr-sm contents-container-anim-in-alt'">
             <!-- Message contents: attachment and text -->
             <div id="messageContent" class="flex flex-col gap-4 items-center">
                 <!-- message attachment -->

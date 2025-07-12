@@ -9,38 +9,38 @@
 
             <!-- Message contents -->
             <div class="absolute -bottom-3 right-10 w-[640px] -rotate-2 flex items-start" v-if="message.content && message.attachment">
-                <div class="absolute bottom-0 left-[82px] right-0 bg-neutral-100 border border-neutral-200 rounded-2xl rounded-tl-sm p-4 px-5 drop-shadow-[0px_0px_20px_#00000060] message-container-anim-in">
+                <div class="absolute bottom-0 left-[82px] right-0 bg-neutral-100 border border-neutral-200 rounded-2xl rounded-tl-sm p-4 px-5 drop-shadow-[0px_0px_20px_#000000cf] message-container-anim-in">
                     <!-- author container -->
                     <div class="absolute top-[-47px] left-[-82px] flex justify-start gap-4 message-author-icon-anim-in -z-10">
 
                         <!-- avatar container -->
-                        <div class="relative top-0 w-16 h-16 rounded-full bg-neutral-700 overflow-hidden drop-shadow-[0px_0px_20px_#00000060]">
+                        <div class="relative top-0 w-16 h-16 rounded-full bg-neutral-700 overflow-hidden drop-shadow-[0px_0px_20px_#000000cf]">
                             <div class="absolute inset-0 bg-cover" :style="`background-image:url(${message.author.avatar})`"></div>
                         </div>
 
                         <!-- username -->
-                        <span class="text-white font-black text-3xl truncate text-ellipsis max-w-96 drop-shadow-[0px_0px_10px_#00000090] message-author-name-anim-in">{{ message.author.name }}</span>
+                        <span class="text-white font-black text-3xl truncate text-ellipsis max-w-96 drop-shadow-[0px_0px_10px_#000000cf] message-author-name-anim-in">{{ message.author.name }}</span>
                     </div>
 
                     <!-- message content -->
                     <span v-if="message.content" class="text-xl font-medium" v-html="formattedContent"></span>
 
                     <!-- Send a message notice -->
-                    <span class="absolute -bottom-9 right-2 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
+                    <span class="absolute -bottom-9 right-2 text-lg text-white drop-shadow-[0px_0px_10px_#000000] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
                 </div>
             </div>
 
             <!-- Alt author tag (attachment only) -->
             <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-5" v-if="!message.content">
                 <!-- avatar container -->
-                <div class="relative top-0 w-14 h-14 rounded-full bg-neutral-700 overflow-hidden drop-shadow-[0px_0px_20px_#00000060] message-author-icon-anim-in">
+                <div class="relative top-0 w-14 h-14 rounded-full bg-neutral-700 overflow-hidden drop-shadow-[0px_0px_20px_#000000cf] message-author-icon-anim-in">
                     <div class="absolute inset-0 bg-cover" :style="`background-image:url(${message.author.avatar})`"></div>
                 </div>
                 <!-- username -->
-                <span class="text-white font-black text-3xl truncate text-ellipsis max-w-96 drop-shadow-[0px_0px_10px_#00000090] message-author-name-anim-in">{{ message.author.name }}</span>
+                <span class="text-white font-black text-3xl truncate text-ellipsis max-w-96 drop-shadow-[0px_0px_10px_#000000cf] message-author-name-anim-in">{{ message.author.name }}</span>
 
                 <!-- Send a message notice -->
-                <span class="absolute -bottom-9 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
+                <span class="absolute -bottom-9 text-lg text-white drop-shadow-[0px_0px_10px_#000000] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
             </div>
         </div>
 

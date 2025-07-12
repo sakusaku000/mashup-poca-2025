@@ -2,7 +2,7 @@
     <!-- create main 1080p canvas -->
     <!-- TODO: REMOVE PLACEHOLDER BACKGROUND -->
      <!--  style="background-image:url(https://cdn.discordapp.com/attachments/549589798554435625/1379185042991091722/image.png?ex=683f51aa&is=683e002a&hm=30ad7ba7de31204c20f68415f0b3843b8311c22a10903c296f912ff87661134c&)" -->
-    <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden">
+    <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden" style="background-image:url(https://cdn.discordapp.com/attachments/549589798554435625/1379185042991091722/image.png?ex=687364ea&is=6872136a&hm=5f3b802fe3302afec2100c882d81767bd366e126fd0e7c082f6cc2f104a99f86&)">
         
         <!-- Popup Displays: Messages + Avatars. Wrapped in fade transition. These disappear if a full screen message is being displayed  -->
         <div class="absolute inset-0 duration-300" :class="messageDisplay.full && showFull ? 'opacity-0' : 'delay-1000'" v-if="showPopups">

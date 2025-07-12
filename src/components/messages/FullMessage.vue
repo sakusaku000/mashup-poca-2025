@@ -18,7 +18,7 @@
                 <span v-if="message.content" class="text-3xl font-medium" v-html="formattedContent"></span>
 
                 <!-- Send a message notice -->
-                <span class="absolute -bottom-10 right-2 text-xl text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95live</b> to appear on screen!</span>
+                <span class="absolute -bottom-10 right-2 text-xl text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
             </div>
         </div>
     </div>

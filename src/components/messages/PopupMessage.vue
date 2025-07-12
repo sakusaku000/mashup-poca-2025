@@ -18,7 +18,7 @@
             <!-- Message contents: attachment and text -->
             <div id="messageContent" class="flex flex-col gap-4 items-center">
                 <!-- message attachment -->
-                <img :src="message.attachment" v-if="message.attachment" class="max-h-80 rounded-2xl outline-2 outline-neutral-300">
+                <img :src="message.attachment" v-if="message.attachment" class="bg-black/60 max-h-80 rounded-2xl outline-2 outline-neutral-300">
                 
                 <!-- message content -->
                 <span v-if="message.content" class="mx-3 text-xl" v-html="formattedContent"></span>

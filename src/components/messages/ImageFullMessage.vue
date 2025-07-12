@@ -5,7 +5,7 @@
         <div class="absolute inset-28 flex items-center justify-center main-container-anim-in">
             
             <!-- Attachment -->
-            <img :src="message.attachment" class="h-full rounded-4xl border-2 border-neutral-200/60 drop-shadow-2xl" :class="message.content ? 'image-scale-down-anim' : 'image-scale-down-anim-imgonly'">
+            <img :src="message.attachment" class="h-full rounded-4xl border-2 border-neutral-200/60 drop-shadow-2xl bg-black/80" :class="message.content ? 'image-scale-down-anim' : 'image-scale-down-anim-imgonly'">
 
             <!-- Message contents -->
             <div class="absolute -bottom-3 right-10 w-[640px] -rotate-2 flex items-start" v-if="message.content && message.attachment">
@@ -26,7 +26,7 @@
                     <span v-if="message.content" class="text-xl font-medium" v-html="formattedContent"></span>
 
                     <!-- Send a message notice -->
-                    <span class="absolute -bottom-9 right-2 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95live</b> to appear on screen!</span>
+                    <span class="absolute -bottom-9 right-2 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                 <span class="text-white font-black text-3xl truncate text-ellipsis max-w-96 drop-shadow-[0px_0px_10px_#00000090] message-author-name-anim-in">{{ message.author.name }}</span>
 
                 <!-- Send a message notice -->
-                <span class="absolute -bottom-9 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95live</b> to appear on screen!</span>
+                <span class="absolute -bottom-9 text-lg text-white drop-shadow-[0px_0px_20px_#00000060] post-msg-notice-anim-in">send messages and photos in <b>#95-live</b> to appear on screen!</span>
             </div>
         </div>
 
